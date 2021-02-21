@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512_1280.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: 100% 100%
+        }
+        #s_l{
+            height:60px;
+            width:400px;
+            text-align: center;
+            font-size: 50px;
+            border-radius: 10px;
+            background-color: rgb(109, 4, 86);
+            color: rgb(2, 2, 2);
+            font-family: "fantasy",Papyrus;
+            
+        }
+        #s_w{
+            height:60px;
+            width:400px;
+            text-align: center;
+            font-size: 50px;
+            border-radius: 10px;
+            background-color: rgb(109, 4, 86);
+            font-family: "fantasy",Papyrus;
+        }
+        #p_l{
+            height:60px;
+            width:400px;
+            text-align: center;
+            font-size: 50px;
+            border-radius: 10px;
+            background-color: rgb(109, 4, 86);
+            font-family: "fantasy",Papyrus;
+        }
+        #p_w{
+            height:60px;
+            width:400px;
+            text-align: center;
+            font-size: 50px;
+            border-radius: 10px;
+            background-color: rgb(109, 4, 86);
+            font-family: "fantasy",Papyrus;
+        }
+        #s_l:hover{
+            background-color: rgb(87, 3, 69);
+        }
+        #s_w:hover{
+            background-color: rgb(87, 3, 69);
+        }
+        #p_l:hover{
+            background-color: rgb(87, 3, 69);
+        }
+        #p_w:hover{
+            background-color: rgb(87, 3, 69);
+        }
+        #sub:hover{
+            background-color: rgb(50, 51, 50);
+        }
+        #sub{
+            height:50px;
+            width: 200px;
+            background-color: rgb(77, 78, 77);
+            font-size: 25px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        ::placeholder{
+            color: rgb(158, 25, 107);
+        }
+        #hading{
+            font-family:'Courier New', Courier, monospace;
+        }
+        #w,#x,#y,#z{
+            color: rgb(24, 26, 24);
+            margin-bottom: 5px;
+        }
+        #setosa,#verginica,#versicolor{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+        <center>
+            <form method = "POST" action = "/predict">
+                <h1 id="hading">IRIE FLOWER PREDICTION</h1>
+                <h2 id="w">Between 1 or 8</h2>
+                <input id="s_l" type="number" name="a" step="0.1" min="1" max="8" placeholder="Sepal Length"><br>
+                <h2 id="x">Between 1 or 4</h2>
+                <input id="s_w" type="number" name="b" step="0.1" min="1" max="4" placeholder="Sepal Width"><br>
+                <h2 id="y">Between 1 or 7</h2>
+                <input id="p_l" type="number" name="c" step="0.1" min="1" max="8" placeholder="Petal Length">
+                <h2 id="z">Between 0 or 3</h2>
+                <input id="p_w" type="number" name="d" step="0.1" min="0" max="8" placeholder="Petal Width"><br><br><br>
+                <input id="sub" type="submit">
+            </form>
+        </center> 
+        <center>   
+            {% if result == 0  %}
+            <h1 id="setosa">Result : Setosa</h1>
+            {% elif result == 1  %}
+            <h1 id="verginica">Result : Verginica</h1>
+            {% elif result == 2  %}
+            <h1 id="versicolor">Result : Versicolor </h1>
+            {% endif %}
+        </center>    
+</body> 
+</html>
